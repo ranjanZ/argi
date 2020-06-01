@@ -1,0 +1,76 @@
+Beverages
+,Coffee
+
+Cereals
+,Amphophalus ,Bajra(Pearl Millet/Cumbu) ,Barley (Jau) ,Foxtail Millet(Navane)
+,Hybrid Cumbu ,Jowar(Sorghum) ,Kodo Millet(Varagu) ,Maize
+,Paddy(Dhan)(Basmati) ,Paddy(Dhan)(Common) ,Ragi (Finger Millet) ,Rice
+,Sajje ,Same/Savi ,T.V. Cumbu ,Wheat
+
+Drug and Narcotics
+,Arecanut(Betelnut/Supari) ,Isabgul (Psyllium) ,Mahua ,Tobacco
+
+Dry Fruits
+,Cashewnuts
+Fibre Crops
+,Cotton ,Jute ,Lint
+
+Forest Products
+,Bay leaf (Tejpatta) ,Broomstick(Flower Broom) ,Firewood ,Mahua Seed(Hippe seed)
+,Neem Seed ,Soapnut(Antawala/Retha) ,Tamarind Fruit ,Tamarind Seed
+,Wood
+
+Fruits
+,Amla(Nelli Kai) ,Apple ,Banana ,Chikoos(Sapota)
+,Grapes ,Guava ,Jack Fruit ,Karbuja(Musk Melon)
+,Kinnow ,Lime ,Mango ,Mousambi(Sweet Lime)
+,Orange ,Papaya ,Peach ,Pineapple
+,Plum ,Pomegranate ,Tender Coconut ,Water Melon
+
+Live Stock,Poultry,Fisheries
+,Cock ,Egg ,Fish ,Hen
+
+Oil Seeds
+,Castor Seed ,Coconut Seed ,Copra ,Groundnut
+,Groundnut (Split) ,Gurellu ,Honge seed ,Linseed
+,Mustard ,Safflower ,Sesamum(Sesame,Gingelly,Til) ,Soyabean
+,Sunflower ,Suva (Dill Seed)
+Oils and Fats
+,Coconut Oil ,Ghee ,Gingelly Oil ,Mustard Oil
+
+Other
+,Bunch Beans ,Gur(Jaggery) ,Rajgir ,Rubber
+,Sugar
+
+Pulses
+,Alasande Gram ,Arhar (Tur/Red Gram)(Whole) ,Arhar Dal(Tur Dal) ,Beans
+,Bengal Gram Dal (Chana Dal) ,Bengal Gram(Gram)(Whole) ,Black Gram (Urd Beans)(Whole) ,Black Gram Dal (Urd Dal)
+,Cowpea (Lobia/Karamani) ,Green Gram (Moong)(Whole) ,Green Gram Dal (Moong Dal) ,Green Peas
+,Kabuli Chana(Chickpeas-White) ,Kulthi(Horse Gram) ,Lak(Teora) ,Lentil (Masur)(Whole)
+,Masur Dal ,Other Pulses ,Peas(Dry) ,White Peas
+
+Spices
+,Ajwan ,Black pepper ,Chili Red ,Coconut
+,Corriander seed ,Cummin Seed(Jeera) ,Dry Chillies ,Garlic
+,Ginger(Dry) ,Methi Seeds ,Pepper ungarbled ,Soanf
+,Turmeric
+
+Vegetables
+,Amaranthus ,Ashgourd ,Banana - Green ,Beetroot
+,Bhindi(Ladies Finger) ,Bitter gourd ,Bottle gourd ,Brinjal
+,Cabbage ,Capsicum ,Carrot ,Cauliflower
+,Chapparad Avare ,Chilly Capsicum ,Cluster beans ,Colacasia
+,Coriander(Leaves) ,Cowpea(Veg) ,Cucumbar(Kheera) ,Drumstick
+,Duster Beans ,Elephant Yam (Suran) ,Field Pea ,French Beans (Frasbean)
+,Galgal(Lemon) ,Ginger(Green) ,Gram Raw(Chholia) ,Green Avare (W)
+,Green Chilli ,Groundnut pods (raw) ,Guar ,Indian Beans (Seam)
+,Kartali (Kantola) ,Knool Khol ,Leafy Vegetable ,Lemon
+,Little gourd (Kundru) ,Long Melon(Kakri) ,Mango (Raw-Ripe) ,Mashrooms
+,Methi(Leaves) ,Mint(Pudina) ,Onion ,Onion Green
+,Papaya (Raw) ,Peas cod ,Peas Wet ,Pegeon Pea (Arhar Fali)
+,Pointed gourd (Parval) ,Potato ,Pumpkin ,Raddish
+,Ridgeguard(Tori) ,Round gourd ,Season Leaves ,Seemebadnekai
+,Snakeguard ,Spinach ,Sponge gourd ,Squash(Chappal Kadoo)
+,Surat Beans (Papadi) ,Suvarna Gadde ,Sweet Potato ,Sweet Pumpkin
+,Tapioca ,Thondekai ,Tinda ,Tomato
+,White Pumpkin ,Yam (Ratalu) 
