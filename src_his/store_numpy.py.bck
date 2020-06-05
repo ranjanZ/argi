@@ -1,0 +1,214 @@
+from all_index import *
+
+
+
+from lxml import etree
+import xlwt
+import sys
+import os
+from shutil import copy
+import pandas as pd
+from dateutil import parser
+from datetime import datetime
+import numpy as np 
+
+
+
+
+
+##########################################################VAR#################################
+state_D={}   #Dict for District
+dist_D={}   #Dict for District
+market_D={} #Dict for Market 
+
+state_count=0   #countict for countistrict
+dist_count=0   #countict for countistrict
+market_count=0 #countict for Market 
+
+
+
+
+var_D={} #Dict for Market 
+dist_count=0
+market_count=0
+var_count=0
+VAR=(dist_D,market_D,var_D,dist_count,market_count,var_count)
+
+########################################################################################################
+
+
+
+
+
+
+
+#put new key if the key is not there otherwise return the same
+def Put_new_key(D,key,base_count):
+    if(not D.has_key(key)):
+        base_count=base_count+1
+        D[key]=base_count
+    
+    return D,base_count
+        
+
+
+#parse one file under items and save it to numpy 
+def parse_file(file_path):
+    global VAR
+    
+    #(dist_D,market_D,var_D,dist_count,market_count,var_count)=VAR
+    global dist_count
+    global market_count
+    global var_count
+
+    global dist_D
+    global market_D
+    global var_D
+
+
+    f=open(file_path)
+    tag=f.readline()
+    for i in range(4):
+        t=f.readline()
+
+    Data=[]
+
+    while(True):
+        Ls=[]
+        while(True):
+            t=f.readline()
+            Ls.append(t)
+
+            if(t=='\t\t</tr><tr>\r\n'):
+                break
+            if(t==""):
+                break
+
+        if(t==""):
+            break
+        dist=Ls[3].split("\">")[1].split("</")[0]
+        mrkt=Ls[5].split("\">")[1].split("</")[0]
+        item=Ls[7].split("\">")[1].split("</")[0]
+        var=Ls[9].split("\">")[1].split("</")[0]
+        grad=Ls[11].split("\">")[1].split("</")[0]
+        min_p=float((Ls[13].split("\">")[1].split("</")[0]))
+        max_p=float(Ls[15].split("\">")[1].split("</")[0])
+        mod_p=float(Ls[17].split("\">")[1].split("</")[0])
+        date=Ls[19].split("\">")[1].split("</")[0]
+
+        date=parser.parse(date)-datetime(2009, 1, 1)                    
+        day=date.days
+
+        dist_D,dist_count=Put_new_key(dist_D,dist,dist_count)
+        print dist_count
+        market_D,market_count=Put_new_key(market_D,mrkt,market_count)
+        var_D,var_count=Put_new_key(var_D,var,var_count)
+
+        Data.append([dist_D[dist],market_D[mrkt],var_D[var],min_p,max_p,mod_p,day])
+        #print(Data)
+        
+    Data=np.array(Data)
+    return Data
+
+
+
+#read all files under particular items and covert it to numpy for particular items
+def read_all(path="/media/ranjan/DATAPART/agri_data/root/Onion/"):
+    #file_path="/media/ranjan/DATAPART/agri_data/root/Onion/Agmarknet_Parice_Report(8).xls"
+    #VAR=(dist_D,market_D,var_D,dist_count,market_count,var_count)
+
+    D=[]
+    for d in os.listdir(path):
+        print("processing",d)
+        file_path=path+d
+        data=parse_file(file_path)
+        D.append(data)
+
+    D=np.concatenate(D,axis=0)
+    return D
+
+
+#save the data in District Code Wise
+def save_data_district_wise(raw_path="/media/ranjan/DATAPART/agri_data/root_raw/Onion/",numpy_path="/media/ranjan/DATAPART/agri_data/root/Onion/"):
+    D,VAR=read_all(raw_path)
+    dist_path=numpy_path
+
+    #create a root district Directory
+    try:
+        os.mkdir(dist_path)
+    except:
+        pass
+
+    #(dist_D,market_D,var_D,dist_count,market_count,var_count)=VAR
+    dist_D_inv = dict(zip(dist_D.values(), dist_D.keys())) 
+    for k in dist_D_inv.keys():
+        file_name=str(k)+".npy"
+        npy_arr=D[D[:,0]==k]
+        mar_list_pdist=np.unique(D[D[:,0]==k][:,1])  #marketlist_per_dist
+
+        np.save(dist_path+file_name,npy_arr)
+
+
+
+
+
+
+
+
+#save all raw data to numpy 
+def save_all_data_to_numpy(raw_root_path="/media/ranjan/DATAPART/agri_data/root_raw/",numpy_root_path="/media/ranjan/DATAPART/agri_data/root/"):
+    for d in os.listdir(raw_root_path):
+        item_raw_path=raw_root_path+d+"/"
+        item_numpy_path=numpy_root_path+d+"/"
+        save_data_district_wise(raw_path=item_raw_path,numpy_path=item_numpy_path)
+
+
+
+
+
+
+
+
+def get_dist_market():
+    pass 
+
+
+
+
+
+
+
+
+
+#file_path="/media/ranjan/DATAPART/agri_data/root/Onion/Agmarknet_Parice_Report(8).xls"
+
+
+
+
+
+
+
+
+
+
+#save all raw data to numpy 
+#save_all_data_to_numpy()
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
